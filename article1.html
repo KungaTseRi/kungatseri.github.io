@@ -1,112 +1,86 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="bo">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kunga's Translations | ཡིག་སྒྱུར་གླེང་སྟེགས།</title>
+    <title>རྒྱུན་རིང་བའི་གསར་བརྗེ་ལྗང་ཁུ།</title>
     <style>
         :root { 
             --main: #800000; 
             --text: #1a1a1a; 
             --paper: #fdfaf5; 
-            --accent: #666;
         }
         
         body { 
             margin: 0; 
             background-color: var(--paper);
+            /* 沙文质感 */
             background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.04'/%3E%3C/svg%3E");
             color: var(--text);
-            font-family: "Garamond", "Georgia", serif;
-            line-height: 1.6;
+            /* 增强藏文兼容性字体集 */
+            font-family: "Microsoft Himalaya", "Noto Sans Tibetan", "Tibetan Machine Uni", "Jomolhari", serif;
+            line-height: 1.8;
             display: flex;
-            flex-direction: column;
-            align-items: center;
+            justify-content: center;
         }
 
         .container { 
             max-width: 800px; 
-            width: 100%;
             background: rgba(255, 255, 255, 0.7); 
-            padding: 60px 70px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.04);
-            margin: 50px 20px;
+            padding: 50px 60px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            margin: 40px 20px;
             border: 1px solid rgba(0,0,0,0.08);
-            min-height: 80vh;
-        }
-        
-        header { border-bottom: 2px solid #000; padding-bottom: 20px; margin-bottom: 40px; }
-        h1 { margin: 0; font-size: 2.2em; text-transform: uppercase; letter-spacing: 3px; font-weight: 500; }
-        .subtitle { font-size: 1.1em; color: var(--accent); margin-top: 5px; font-family: "Microsoft Himalaya", serif; }
-
-        /* 文章条目样式 */
-        .article-item {
-            margin-bottom: 35px;
-            padding-bottom: 20px;
-            border-bottom: 1px solid #eee;
-            transition: 0.3s;
-        }
-        .article-item:hover {
-            border-bottom: 1px solid var(--main);
-        }
-        
-        .article-date {
-            font-family: "Helvetica", sans-serif;
-            font-size: 0.85em;
-            color: var(--accent);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-        
-        .article-title {
-            display: block;
-            margin: 8px 0;
-            font-size: 1.6em;
-            text-decoration: none;
-            color: #000;
-            font-family: "Microsoft Himalaya", "Noto Sans Tibetan", serif;
-            font-weight: bold;
-        }
-        .article-title:hover {
-            color: var(--main);
         }
 
-        .article-meta {
-            font-size: 0.9em;
-            color: #555;
-            font-style: italic;
+        header { text-align: center; margin-bottom: 40px; border-bottom: 2px solid #000; padding-bottom: 20px; }
+        
+        /* 藏文标题需要足够大才好看 */
+        h1 { margin: 0; font-size: 2.5em; line-height: 1.3; color: #000; }
+        
+        .meta { margin-top: 15px; font-size: 1.1em; color: #666; }
+        .label { color: var(--main); font-weight: bold; margin-right: 5px; }
+
+        article { text-align: justify; font-size: 1.3em; }
+        p { margin-bottom: 20px; text-indent: 2em; }
+
+        .abstract { 
+            background: rgba(128, 0, 0, 0.03); 
+            padding: 20px; 
+            border-left: 4px solid var(--main); 
+            margin-bottom: 30px; 
+            font-size: 0.95em;
         }
 
-        footer { margin-top: auto; padding: 40px; font-size: 0.8em; color: #888; text-align: center; }
+        footer { margin-top: 50px; padding-top: 20px; border-top: 1px solid #eee; font-size: 0.85em; color: #888; }
     </style>
 </head>
 <body>
 
 <div class="container">
     <header>
-        <h1>Academic Translations</h1>
-        <div class="subtitle">ཡིག་སྒྱུར་དང་དཔྱད་རྩོམ་ཕྱོགས་བསྒྲིགས།</div>
+        <h1>རྒྱུན་རིང་བའི་གསར་བརྗེ་ལྗང་ཁུ།</h1>
+        <div class="meta">
+            <span><span class="label">#Author</span>ར་ཅེ· དཔལ་ལྡན།</span> &nbsp;&nbsp;
+            <span><span class="label">#Translator</span>ཀུན་དགའ་ཚེ་རིང་།</span>
+        </div>
     </header>
 
-    <div class="archive-list">
-        <div class="article-item">
-            <div class="article-date">March 2026</div>
-            <a href="article1.html" class="article-title">རྒྱུན་རིང་བའི་གསར་བརྗེ་ལྗང་ཁུ།</a>
-            <div class="article-meta">
-                Author: Raj Patel | Translator: Kunga Tsering
-            </div>
-        </div>
-
-        <div class="article-item" style="opacity: 0.5;">
-            <div class="article-date">Upcoming</div>
-            <span class="article-title" style="font-size: 1.2em;">More research translations arriving soon...</span>
-        </div>
+    <div class="abstract">
+        <strong>གནད་བསྡུས།</strong><br>
+        གོ་ལའི་དྲོད་ཚད་མཐོ་རུ་འགྲོ་བ་དང་བཀྲེས་ལྟོགས་མུ་གེའི་གནད་དོན་ཐག་ཆོད་ཕྱིར། སྲིད་གཞུང་དང་ཐེབས་རྩ་ཚོགས་པ། རོགས་སྐྱོར་ལས་ཁུངས་མང་དག་གཅིག་གིས་“གསར་བརྗེ་ལྗང་ཁུ་གསར་པ”ཞིག་ལ་རེ་འབོད་བྱེད་བཞིན་མཆིས།
     </div>
-</div>
 
-<footer>
-    © 2026 Kunga Tsering. All rights reserved.
-</footer>
+    <article>
+        <p><strong>སྔོན་འགྲོའི་ཤེས་བྱའི་བྱང་བུ།</strong></p>
+        <p>མ་རྩ་རིང་ལུགས་ཀྱི་བྱུང་འཕེལ་དང་མཇུག་འབྲས་སྔོན་དཔག མ་རྩ་རིང་ལུགས་ཀྱི་གོ་དོན་ནི་ངལ་ནུས་དང་། འཕྲུལ་ཆས་སོགས་ཚུད་པའི་མ་རྩ། ས་ཆ་སོགས་ཀྱི་ཐོན་སྐྱེད་རྒྱུ་ཆ་སྒེར་ལ་དབང་ཞིང་ངལ་རྕོལ་གྱི་རིན་ཐང་ལྷག་མ་བཙིར་སྣོན་བྱེད་པའི་ལམ་ལུགས་ལ་ཟེར།</p>
+        <p>ལམ་ལུགས་དེར་མི་སྒེར་གྱི་བདག་དབང་དང་རྒྱུ་ནོར་སོགས་ལ་ཁྲིམས་ལུགས་ཀྱི་སྲུང་སྐྱོབ་བྱེད་བཞིན་ཡོད། མར་ཁེ་སེ་རིང་ལུགས་ཀྱི་ལྟ་བ་གཞིགས་ན། མ་རྩ་རིང་ལུགས་ཀྱི་འཁོར་རྒྱུགས་ནི་ཐོན་སྐྱེད་རྒྱུ་ཆ་མཉམ་དུ་འདུས་ནས་རིན་ཐང་ལྡན་པའི་ཐོན་རྫས་ཐོན་སྐྱེད་བྱས་ཤིང་། དེ་ལས་ཁེ་ཕན་ཐོབ་ཐུབ་ལ། ཁེ་ཕན་དེ་དག་མུ་མཐུད་ཐོན་སྐྱེད་རྒྱུ་ཆ་རྒྱ་སྐྱེད་དང་སྦྱིན་བདག་གི་འཚོ་བའི་འགྲོ་གྲོན། ལས་མིའི་འཚོ་བའི་འགྲོ་གྲོན་བཅས་སུ་གཏོང་གིན་ཡོད་པའི་བརྒྱུད་རིམ་ཞིག་ཡིན།</p>
+    </article>
+
+    <footer>
+        Patel, R. (2012). The Long Green Revolution. The Journal of Peasant Studies.
+    </footer>
+</div>
 
 </body>
 </html>
