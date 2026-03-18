@@ -1,86 +1,206 @@
 <!DOCTYPE html>
-<html lang="zh">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>贡嘎次仁 | Kunga Tsering</title>
+    <title>Kunga Tsering | 贡嘎次仁</title>
     <style>
         :root { --main: #800000; --text: #333; --bg: #fdfdfd; --light: #f4f4f4; }
-        body { font-family: "PingFang SC", "STHeiti", "Microsoft YaHei", sans-serif; margin: 0; background: var(--bg); color: var(--text); line-height: 1.6; }
+        body { font-family: "Inter", "PingFang SC", sans-serif; margin: 0; background: var(--bg); color: var(--text); line-height: 1.6; }
         nav { background: #fff; padding: 15px 10%; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 10px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 1000; }
         .hero { background: #fff; padding: 60px 10%; text-align: center; border-bottom: 5px solid var(--main); }
-        .container { max-width: 900px; margin: 30px auto; padding: 0 20px; padding-bottom: 60px; }
-        .card { background: #fff; padding: 25px; border-radius: 12px; margin-bottom: 25px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border: 1px solid #eee; position: relative; }
+        .container { max-width: 900px; margin: 30px auto; padding: 0 20px 80px 20px; }
+        .card { background: #fff; padding: 25px; border-radius: 12px; margin-bottom: 25px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border: 1px solid #eee; }
         h2 { color: var(--main); border-bottom: 2px solid var(--main); display: inline-block; margin-bottom: 25px; font-size: 1.6em; padding-bottom: 5px; }
         h3 { margin-top: 0; color: #000; font-size: 1.25em; margin-bottom: 5px; }
-        h4 { margin: 0; color: #555; font-weight: normal; font-size: 1em; }
-        .date { color: #888; font-size: 0.9em; margin-bottom: 15px; }
-        .hero-date { color: #888; font-size: 0.9em; margin-top: 5px; }
-        ul { margin: 0; padding-left: 18px; color: #444; font-size: 0.95em; }
+        h4 { margin: 0; color: #555; font-weight: 600; font-size: 1.05em; }
+        .date { color: #888; font-size: 0.9em; margin-bottom: 12px; font-style: italic; }
+        ul { margin: 10px 0; padding-left: 18px; color: #444; font-size: 0.95em; }
         ul li { margin-bottom: 8px; }
-        .lang-btn { cursor: pointer; padding: 8px 20px; border: 2px solid var(--main); color: var(--main); font-weight: bold; border-radius: 25px; transition: 0.3s; background: transparent; font-size: 0.9em; }
+        .lang-btn { cursor: pointer; padding: 8px 20px; border: 2px solid var(--main); color: var(--main); font-weight: bold; border-radius: 25px; transition: 0.3s; background: transparent; }
         .lang-btn:hover { background: var(--main); color: #fff; }
         .hidden { display: none; }
         .contact { font-size: 0.9em; color: #666; margin-top: 15px; }
-        .tag-container { margin-bottom: 15px; }
-        .tag { display: inline-block; background: var(--light); padding: 3px 12px; border-radius: 4px; font-size: 0.85em; margin-right: 8px; color: #555; border: 1px solid #e0e0e0; }
-        .skill-group { margin-bottom: 15px; }
-        .skill-title { font-weight: bold; color: var(--main); margin-right: 10px; display: inline-block; width: 60px; }
-        .award-item { display: flex; justify-content: space-between; align-items: center; padding: 10px 0; border-bottom: 1px solid #eee; }
-        .award-name { font-weight: bold; }
-        .award-date { color: #888; font-size: 0.9em; }
-        @media (max-width: 600px) { nav { padding: 15px 5%; } .hero { padding: 40px 5%; } .award-item { flex-direction: column; align-items: flex-start; } .award-date { margin-top: 5px; } }
+        .award-item { display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px dotted #ccc; }
+        .award-date { color: #888; min-width: 80px; text-align: right; }
+        .skill-group { margin-bottom: 10px; font-size: 0.95em; }
+        .skill-title { font-weight: bold; color: var(--main); margin-right: 10px; }
     </style>
 </head>
 <body>
 
 <nav>
-    <div style="font-weight: 900; font-size: 1.3em; letter-spacing: 1px;">KUNGA TSERING</div>
-    <button class="lang-btn" onclick="toggleLang()">English / 中文</button>
+    <div style="font-weight: 900; font-size: 1.3em;">KUNGA TSERING</div>
+    <button class="lang-btn" onclick="toggleLang()">中文 / English</button>
 </nav>
 
 <div class="hero">
-    <h1 id="main-name">贡嘎次仁</h1>
-    <p id="main-sub">清华大学 | 环境工程 & 社会学</p>
+    <h1 id="main-name">Kunga Tsering</h1>
+    <p id="main-sub">Tsinghua University | Sociology & Environment Engineering</p>
     <div class="contact">
         ggcr21@mails.tsinghua.edu.cn | (+86) 157-1002-9790<br>
-        北京市海淀区清华大学 100084
+        Tsinghua University, Haidian District, Beijing 100084
     </div>
 </div>
 
 <div class="container">
-    <div id="zh-content">
+    
+    <div id="en-content">
+        <section>
+            <h2>Education</h2>
+            <div class="card">
+                <h3>Tsinghua University</h3>
+                <h4>School of Social Science | Bachelor of Laws in Sociology</h4>
+                <div class="date">Sep 2023 - Present</div>
+                <p><strong>Research Interests:</strong> Climate Change, Social Inequality, Ethnic Studies, Gender, Development Studies, Nomadic and Agrarian Studies</p>
+            </div>
+            <div class="card">
+                <h3>Tsinghua University</h3>
+                <h4>School of Environment | Environment Engineering (Global Environment Program)</h4>
+                <div class="date">Sep 2021 - Sep 2023</div>
+            </div>
+            <div class="card">
+                <h3>Chinese University of Hong Kong</h3>
+                <h4>International Asia Study Program (Exchange)</h4>
+                <div class="date">Jan 2025 - May 2025</div>
+                <p>Courses: Environment Politics, Gender Study, Death Anthropology</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>Work & Project Experience</h2>
+            <div class="card">
+                <h3>Shingta Translation Club</h3>
+                <h4>President | Beijing, China</h4>
+                <div class="date">Sep 2022 - Present</div>
+                <ul>
+                    <li>Leading a 34-member team; serving nearly 10,000 users across translation and multilingual correction projects.</li>
+                    <li>Translated 64 articles (83,000 words) with over 25,000 views.</li>
+                    <li>Compiled "A Decade of Shingta Translation Club Anthology" (290,000 words), currently preparing for publication.</li>
+                    <li>Built cooperation with 3 Tibetan companies, including Starlight Social Work Service Center.</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3>SELWHA Company</h3>
+                <h4>Knowledge Expert | Hongkong, China</h4>
+                <div class="date">Mar 2025 - Present</div>
+                <ul>
+                    <li>Developing a Tibetan calendrical app based on indigenous knowledge.</li>
+                    <li>Built a cultural knowledge framework incorporating Tibetan myths and symbols for accessory design.</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3>Basel Convention Asia-Pacific Regional Centre</h3>
+                <h4>Research Assistant | Beijing, China</h4>
+                <div class="date">Jan 2023 - Feb 2023</div>
+                <ul>
+                    <li>Co-authored "Key Focus Areas and Trends at the UN Environment Assembly" (2nd author) in China Environmental Management Development Report 2024.</li>
+                    <li>Assisted in drafting the framework for "Thirty Years of the Basel Convention".</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3>“D.LANE” Minor Ethnic Youth Career Development</h3>
+                <h4>Co-Founder & Lead Organizer</h4>
+                <div class="date">Jun 2024 - Present</div>
+                <ul>
+                    <li>Organized 6 career seminars for 1,500+ participants; launched the first volunteer training camp.</li>
+                    <li>Built a resource-sharing platform for ethnic minority youth (570 members).</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3>Tsinghua University Art Museum</h3>
+                <h4>Volunteer | Beijing, China</h4>
+                <div class="date">Oct 2023 - Present</div>
+                <ul>
+                    <li>Devoted 50+ service hours; led 7 guided tours for African Art Exhibitions.</li>
+                    <li>Organized "Tibetan Light & Shadow, Ontological Gaze on Different Cultures" workshop.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h2>Academic Practice & International Engagement</h2>
+            <div class="card">
+                <h3>Grassland Carbon Emissions Trading Projects</h3>
+                <div class="date">Apr 2025 - Present</div>
+                <ul>
+                    <li>Conducting 6-month field research in Qinghai-Tibet Plateau on carbon offset implementation.</li>
+                    <li>Supported by Tsinghua’s "Academic Promotion Program" (B-rated funding).</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3>Survey on Rangeland Property Rights</h3>
+                <div class="date">Aug 2024 - Sep 2024</div>
+                <ul>
+                    <li>Completed fieldwork at four national park sites in Qinghai; interviewed 25+ herders on property rights.</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3>Social Practice in Cambodia</h3>
+                <div class="date">Jun 2024 - Jul 2024</div>
+                <ul>
+                    <li>Authored reports on Khmer Rouge; taught Chinese to 20+ students.</li>
+                    <li>Awarded Tsinghua 2024 Social Practice "Silver Award".</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3>World Youth Development Forum</h3>
+                <h4>Delegate of China & Volunteer</h4>
+                <div class="date">Jun 2022 - Jul 2022</div>
+                <ul>
+                    <li>Attended as a Chinese youth delegate; coordinated liaison for over 500 participants.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h2>Honors & Skills</h2>
+            <div class="card">
+                <div class="award-item"><span>Tsinghua Outstanding Volunteer Service Award</span><span class="award-date">2024.11</span></div>
+                <div class="award-item"><span>4th Place, Tsinghua Men’s Diving Doubles</span><span class="award-date">2024.12</span></div>
+                <div class="award-item"><span>Tsinghua Social Sciences Zhiqin Scholarship</span><span class="award-date">2024.05</span></div>
+                <div class="award-item"><span>Sakya County Educational Scholarship</span><span class="award-date">2021.09</span></div>
+            </div>
+            <div class="card">
+                <div class="skill-group"><span class="skill-title">Languages:</span>Tibetan (Native), Mandarin (Prof.), English (Fluent), Spanish (Beg.)</div>
+                <div class="skill-group"><span class="skill-title">Skills:</span>Python, Stata, SPSS, Photoshop, DaVinci, CapCut</div>
+            </div>
+        </section>
+    </div>
+
+    <div id="zh-content" class="hidden">
         <section>
             <h2>教育经历</h2>
             <div class="card">
-                <h3>清华大学社科学院</h3>
-                <h4>社会学学士</h4>
-                <div class="hero-date">2023.09 - 至今</div>
-                <p><strong>研究兴趣：</strong>气候变化、社会分层与流动、民族、性别、发展研究、牧业与农政研究</p>
+                <h3>清华大学</h3>
+                <h4>社会科学学院 | 社会学学士</h4>
+                <div class="date">2023.09 - 至今</div>
+                <p><strong>研究兴趣：</strong>气候变化、社会分层与流动、民族、性别、发展研究、牧业与农政</p>
             </div>
             <div class="card">
-                <h3>清华大学环境学院</h3>
-                <h4>环境工程（全球环境国际班）</h4>
-                <div class="hero-date">2021.09 - 2023.09</div>
+                <h3>清华大学</h3>
+                <h4>环境学院 | 环境工程（全球环境国际班）</h4>
+                <div class="date">2021.09 - 2023.09</div>
             </div>
             <div class="card">
                 <h3>香港中文大学</h3>
                 <h4>国际亚洲学项目（交换）</h4>
-                <p>修读课程：死亡人类学、全球环境政治、性别研究</p>
+                <div class="date">2025.01 - 2025.05</div>
+                <p>课程：环境政治、性别研究、死亡人类学</p>
             </div>
         </section>
-        
+
         <section>
             <h2>工作与项目经历</h2>
             <div class="card">
-                <h3>木马翻译社 (Shingta)</h3>
+                <h3>木马翻译社</h3>
                 <h4>负责人 | 北京</h4>
                 <div class="date">2022.09 - 至今</div>
                 <ul>
                     <li>管理34人团队，策划翻译、朗诵、杂语纠正等栏目，覆盖用户近1万人。</li>
                     <li>累计翻译64篇文章（8.3万字），浏览量超过2.5万人次。</li>
                     <li>编纂完成《木马翻译社十年文集》（29万字），筹备出版中。</li>
-                    <li>与包括雪域之星社会工作服务中心在内的3家西藏本土公司建立合作。</li>
+                    <li>与雪域之星社会工作服务中心等3家西藏本土公司建立合作。</li>
                 </ul>
             </div>
             <div class="card">
@@ -88,18 +208,8 @@
                 <h4>知识专家 | 香港</h4>
                 <div class="date">2025.03 - 至今</div>
                 <ul>
-                    <li>开发藏族本土历算知识系统，已完成基础架构设计。</li>
+                    <li>开发藏族本土历算知识系统，完成基础架构设计。</li>
                     <li>建构产品背后的知识体系，融合传统文化与现代工艺。</li>
-                </ul>
-            </div>
-            <div class="card">
-                <h3>“我们的路”少数民族青年项目</h3>
-                <h4>联合发起人 & 主理人</h4>
-                <div class="date">2024.06 - 至今</div>
-                <ul>
-                    <li>组织6场职业发展分享会，覆盖1000+人次。</li>
-                    <li>搭建资源整合与信息共享平台，社群人数达570人。</li>
-                    <li>开展第一期志愿者训练营，专注于领导力与导师制度。</li>
                 </ul>
             </div>
             <div class="card">
@@ -108,7 +218,16 @@
                 <div class="date">2023.01 - 2023.02</div>
                 <ul>
                     <li>合著《联合国环境大会重点关注及趋势研究》（第二作者），发表于《中国环境管理发展报告2024》。</li>
-                    <li>协助撰写《巴塞尔公约三十年》书稿框架，整理区域中心数据。</li>
+                    <li>协助撰写《巴塞尔公约三十年》书稿框架，整理区域中心工作数据。</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3>“我们的路”少数民族青年项目</h3>
+                <h4>联合发起人 & 主理人</h4>
+                <div class="date">2024.06 - 至今</div>
+                <ul>
+                    <li>组织6场职业发展分享会，覆盖1000+人次；开展第一期志愿者训练营。</li>
+                    <li>搭建资源整合与信息共享平台，社群人数达570人。</li>
                 </ul>
             </div>
         </section>
@@ -116,10 +235,10 @@
         <section>
             <h2>学术实践与国际参与</h2>
             <div class="card">
-                <h3>青藏高原草原碳汇交易调研</h3>
+                <h3>中国地方层面的碳市场实践考察</h3>
                 <div class="date">2025.04 - 至今</div>
                 <ul>
-                    <li>开展为期6个月的在地调研，评估碳抵消政策的落地情况。</li>
+                    <li>在青藏高原进行为期6个月的在地调研，评估草原碳汇政策。</li>
                     <li>获得清华大学“学推计划”B评级资金支持。</li>
                 </ul>
             </div>
@@ -127,134 +246,31 @@
                 <h3>柬埔寨社会实践</h3>
                 <div class="date">2024.06 - 2024.07</div>
                 <ul>
-                    <li>撰写《柬埔寨红色高棉政治生态调研报告》（5000字）。</li>
-                    <li>开展短期中文支教与小学校园改造，获清华大学社会实践“银奖”。</li>
+                    <li>撰写《柬埔寨红色高棉政治生态调研报告》；开展中文支教与校园改造。</li>
+                    <li>获清华大学2024年度社会实践“银奖”。</li>
                 </ul>
             </div>
             <div class="card">
-                <h3>“中美新声”社会实践</h3>
-                <div class="date">2023.06 - 2023.07</div>
+                <h3>世界青年发展论坛</h3>
+                <h4>中方青年代表 & 志愿者</h4>
+                <div class="date">2022.06 - 2022.07</div>
                 <ul>
-                    <li>负责制作纪录片及宣传视频，被清华大学官方平台转发。</li>
-                    <li>参访美国东部7座城市的多家高校、智库和政府部门。</li>
+                    <li>作为中方青年代表参加主论坛；统筹外联工作，服务500+参会代表。</li>
                 </ul>
             </div>
         </section>
 
         <section>
-            <h2>志愿服务与荣誉</h2>
+            <h2>荣誉与技能</h2>
             <div class="card">
-                <h3>荣誉与奖项</h3>
-                <div class="award-item"><span class="award-name">清华大学志愿公益优秀奖</span><span class="award-date">2024.11</span></div>
-                <div class="award-item"><span class="award-name">清华大学跳水比赛男子双人第四名</span><span class="award-date">2024.12</span></div>
-                <div class="award-item"><span class="award-name">清华大学社科学院至勤全球胜任力奖学金</span><span class="award-date">2024.05</span></div>
-                <div class="award-item"><span class="award-name">萨迦县特别奖学金 / 优秀教育奖学金</span><span class="award-date">2021.09</span></div>
+                <div class="award-item"><span>清华大学志愿公益优秀奖</span><span class="award-date">2024.11</span></div>
+                <div class="award-item"><span>清华大学跳水比赛男子双人第四名</span><span class="award-date">2024.12</span></div>
+                <div class="award-item"><span>清华大学社科学院至勤全球胜任力奖学金</span><span class="award-date">2024.05</span></div>
+                <div class="award-item"><span>萨迦县教育特别奖学金</span><span class="award-date">2021.09</span></div>
             </div>
             <div class="card">
-                <h3>语言与技能</h3>
-                <div class="skill-group"><span class="skill-title">语言:</span>藏语(母语), 汉语(专业), 英语(流利), 西班牙语(初学)</div>
-                <div class="skill-group"><span class="skill-title">技能:</span>Python, Stata, SPSS, Photoshop, DaVinci, CapCut</div>
-            </div>
-        </section>
-    </div>
-
-    <div id="en-content" class="hidden">
-        <section>
-            <h2>Education</h2>
-            <div class="card">
-                <h3>Tsinghua University, School of Social Science</h3>
-                <h4>Bachelor of Laws in Sociology</h4>
-                <div class="hero-date">Sep 2023 - Present</div>
-                <p><strong>Research Interests:</strong> Climate Change, Social Inequality, Ethnic Studies, Gender, Development Studies, Nomadic and Agrarian Studies</p>
-            </div>
-            <div class="card">
-                <h3>Tsinghua University, School of Environment</h3>
-                <h4>Environment Engineering (Global Environment Program)</h4>
-                <div class="hero-date">Sep 2021 - Sep 2023</div>
-            </div>
-            <div class="card">
-                <h3>Chinese University of Hong Kong</h3>
-                <h4>International Asia Study Program (Exchange)</h4>
-                <p>Courses: Death Anthropology, Global Environment Politics, Gender Study</p>
-            </div>
-        </section>
-        
-        <section>
-            <h2>Work & Project Experience</h2>
-            <div class="card">
-                <h3>Shingta Translation Club</h3>
-                <h4>President | Beijing, China</h4>
-                <div class="date">Sep 2022 - Present</div>
-                <ul>
-                    <li>Leading 34 members, managing translation, recitation, and correction projects for ~10,000 users.</li>
-                    <li>Translated 64 articles (83k words) with over 25k views.</li>
-                    <li>Compiled the 10-year anthology (290k words), currently preparing for publication.</li>
-                    <li>Built partnerships with 3 companies in Tibet, including Starlight Social Work Service Center.</li>
-                </ul>
-            </div>
-            <div class="card">
-                <h3>SELWHA Company</h3>
-                <h4>Knowledge Expert | Hongkong, China</h4>
-                <div class="date">Mar 2025 - Present</div>
-                <ul>
-                    <li>Developing a Tibetan calendrical app based on indigenous knowledge (foundational design completed).</li>
-                    <li>Building a cultural framework incorporating Tibetan myths for product design and storytelling.</li>
-                </ul>
-            </div>
-            <div class="card">
-                <h3>D.LANE Minority Youth Program</h3>
-                <h4>Co-Founder & Lead Organizer</h4>
-                <div class="date">Jun 2024 - Present</div>
-                <ul>
-                    <li>Organized 6 career seminars, reaching 1,500+ participants.</li>
-                    <li>Built a resource-sharing platform, growing the community to 570 members.</li>
-                    <li>Launched the first volunteer training camp focused on leadership and mentorship.</li>
-                </ul>
-            </div>
-        </section>
-
-        <section>
-            <h2>Fieldwork & International Engagement</h2>
-            <div class="card">
-                <h3>Grassland Carbon Emissions Trading Projects</h3>
-                <div class="date">Apr 2025 - Present</div>
-                <ul>
-                    <li>Conducting 6-month fieldwork in Qinghai-Tibet Plateau to evaluate carbon offset implementation.</li>
-                    <li>Supported by Tsinghua’s "Academic Promotion Program" (B-rated funding).</li>
-                </ul>
-            </div>
-            <div class="card">
-                <h3>Social Practice in Cambodia</h3>
-                <div class="date">Jun 2024 - Jul 2024</div>
-                <ul>
-                    <li>Authored reports on Khmer Rouge in Cambodia (5,000 words).</li>
-                    <li>Taught Chinese and renovated classroom structures; received Tsinghua Social Practice "Silver Award".</li>
-                </ul>
-            </div>
-            <div class="card">
-                <h3>BRS COPs</h3>
-                <h4>Observer | Geneva, Switzerland</h4>
-                <div class="date">May 2023</div>
-                <ul>
-                    <li>Co-Organized a side event and delivered a speech on "Youth Voices in Environmental Protection".</li>
-                    <li>Authored 5 conference news reports published by CBCGDF.</li>
-                </ul>
-            </div>
-        </section>
-
-        <section>
-            <h2>Honors & Skills</h2>
-            <div class="card">
-                <h3>Awards</h3>
-                <div class="award-item"><span class="award-name">Tsinghua Outstanding Volunteer Service Award</span><span class="award-date">Nov 2024</span></div>
-                <div class="award-item"><span class="award-name">4th Place, Tsinghua Men’s Diving Doubles Competition</span><span class="award-date">Dec 2024</span></div>
-                <div class="award-item"><span class="award-name">Tsinghua Zhiqin Global Competency Scholarship</span><span class="award-date">May 2024</span></div>
-                <div class="award-item"><span class="award-name">Sakya County Educational Outstanding Scholarship</span><span class="award-date">Sep 2021</span></div>
-            </div>
-            <div class="card">
-                <h3>Languages & Skills</h3>
-                <div class="skill-group"><span class="skill-title">Languages:</span>Tibetan(native), Mandarin(professional), English(fluent), Spanish(Beginner)</div>
-                <div class="skill-group"><span class="skill-title">Skills:</span>Python, Stata, SPSS, Photoshop, DaVinci, CapCut</div>
+                <div class="skill-group"><span class="skill-title">语言:</span>藏语 (母语), 汉语 (专业), 英语 (流利), 西班牙语 (初学)</div>
+                <div class="skill-group"><span class="skill-title">软件技能:</span>Python, Stata, SPSS, Photoshop, DaVinci, CapCut</div>
             </div>
         </section>
     </div>
@@ -270,12 +286,14 @@
 
         if (zh.classList.contains('hidden')) {
             zh.classList.remove('hidden'); en.classList.add('hidden');
-            name.innerText = "贡嘎次仁"; sub.innerText = "清华大学 | 环境工程 & 社会学";
-            btn.innerText = "English / 中文";
+            name.innerText = "贡嘎次仁"; 
+            sub.innerText = "清华大学 | 环境工程 & 社会学";
+            btn.innerText = "Switch to English";
         } else {
             zh.classList.add('hidden'); en.classList.remove('hidden');
-            name.innerText = "Kunga Tsering"; sub.innerText = "Tsinghua University | Env. Engineering & Sociology";
-            btn.innerText = "中文 / English";
+            name.innerText = "Kunga Tsering"; 
+            sub.innerText = "Tsinghua University | Sociology & Environment Engineering";
+            btn.innerText = "切换至中文";
         }
     }
 </script>
