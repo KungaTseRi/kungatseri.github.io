@@ -3,36 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kunga Tsering | Resume</title>
+    <title>Kunga Tsering | CV</title>
     <style>
-        :root { --main: #800000; --text: #222; --line: #ddd; }
-        body { font-family: "Garamond", "Times New Roman", serif; margin: 0; background: #fff; color: var(--text); line-height: 1.4; }
-        .container { max-width: 800px; margin: 40px auto; padding: 0 40px; }
+        :root { 
+            --main: #800000; 
+            --text: #1a1a1a; 
+            /* 沙文/米色背景 */
+            --paper: #fcfaf5; 
+        }
         
-        /* Header */
-        header { text-align: center; margin-bottom: 25px; }
-        h1 { margin: 0; font-size: 2.2em; text-transform: uppercase; letter-spacing: 2px; }
-        .contact-info { font-size: 0.95em; margin-top: 5px; color: #555; }
-        
-        /* Section Headers */
-        h2 { border-bottom: 1.5px solid #000; text-transform: uppercase; font-size: 1.1em; margin: 25px 0 10px 0; letter-spacing: 1px; }
-        
-        /* Compact Education Style */
-        .item { margin-bottom: 12px; }
-        .item-header { display: flex; justify-content: space-between; font-weight: bold; }
-        .item-sub { display: flex; justify-content: space-between; font-style: italic; font-size: 0.95em; margin-top: 1px; }
-        
-        /* Lists */
-        ul { margin: 4px 0 0 18px; padding: 0; list-style-type: square; }
-        li { margin-bottom: 3px; font-size: 0.95em; }
-        p { margin: 3px 0; font-size: 0.95em; }
+        /* 磨砂质感背景层 */
+        body { 
+            margin: 0; 
+            background-color: var(--paper);
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E");
+            color: var(--text);
+            font-family: "Garamond", "Hoefler Text", "Times New Roman", serif;
+            line-height: 1.35;
+        }
 
-        /* Awards & Skills Table-like */
-        .grid { display: flex; justify-content: space-between; font-size: 0.95em; margin-bottom: 4px; }
-        .skill-line { margin-top: 8px; font-size: 0.95em; }
+        .container { 
+            max-width: 800px; 
+            margin: 40px auto; 
+            padding: 40px; 
+            background: rgba(255, 255, 255, 0.4); /* 半透明让底层纹理透出来 */
+            box-shadow: 0 0 20px rgba(0,0,0,0.02);
+        }
+        
+        header { text-align: center; margin-bottom: 30px; border-bottom: 2px solid #000; padding-bottom: 15px; }
+        h1 { margin: 0; font-size: 2.4em; text-transform: uppercase; letter-spacing: 3px; font-weight: normal; }
+        .contact-info { font-size: 0.95em; margin-top: 8px; color: #444; }
+        
+        h2 { border-bottom: 1px solid #444; text-transform: uppercase; font-size: 1.05em; margin: 25px 0 12px 0; letter-spacing: 1.5px; font-weight: bold; }
+        
+        /* Education: 极简紧凑排版 */
+        .edu-section { margin-bottom: 15px; }
+        .item { margin-bottom: 8px; }
+        .item-header { display: flex; justify-content: space-between; font-weight: bold; font-size: 1.05em; }
+        .item-sub { display: flex; justify-content: space-between; font-style: italic; font-size: 0.95em; color: #333; }
+        
+        ul { margin: 4px 0 0 15px; padding: 0; list-style-type: disc; }
+        li { margin-bottom: 2px; font-size: 0.93em; }
+        p { margin: 2px 0; font-size: 0.93em; }
+
+        .grid { display: flex; justify-content: space-between; font-size: 0.93em; margin-bottom: 3px; }
         .bold { font-weight: bold; }
+        .skill-line { margin-top: 10px; font-size: 0.93em; border-top: 1px solid #eee; padding-top: 10px; }
 
-        @media print { .container { margin: 0; padding: 20px; width: 100%; } }
+        @media print { .container { margin: 0; padding: 0; box-shadow: none; } body { background: #fff; } }
     </style>
 </head>
 <body>
@@ -46,40 +64,22 @@
         </div>
     </header>
 
-    <section>
+    <section class="edu-section">
         <h2>Education</h2>
         <div class="item">
-            <div class="item-header">
-                <span>School of Social Science at Tsinghua University</span>
-                <span>Sep 2023 - Present</span>
-            </div>
-            <div class="item-sub">
-                <span>Bachelor of Laws in Sociology</span>
-                <span>Beijing, China</span>
-            </div>
+            <div class="item-header"><span>Tsinghua University</span><span>2023.09 - Present</span></div>
+            <div class="item-sub"><span>Bachelor of Laws in Sociology</span><span>Beijing, China</span></div>
             <p><strong>Research Interests:</strong> Climate Change, Social Inequality, Ethnic Studies, Gender, Nomadic and Agrarian Studies</p>
         </div>
 
         <div class="item">
-            <div class="item-header">
-                <span>School of Environment at Tsinghua University</span>
-                <span>Sep 2021 - Sep 2023</span>
-            </div>
-            <div class="item-sub">
-                <span>Environment Engineering (Global Environment Program)</span>
-                <span>Beijing, China</span>
-            </div>
+            <div class="item-header"><span>Tsinghua University</span><span>2021.09 - 2023.09</span></div>
+            <div class="item-sub"><span>Environment Engineering (Global Environment Program)</span><span>Beijing, China</span></div>
         </div>
 
         <div class="item">
-            <div class="item-header">
-                <span>Chinese University of Hong Kong</span>
-                <span>Jan 2025 - May 2025</span>
-            </div>
-            <div class="item-sub">
-                <span>International Asia Study Program (Exchange)</span>
-                <span>Hong Kong, China</span>
-            </div>
+            <div class="item-header"><span>Chinese University of Hong Kong</span><span>2025.01 - 2025.05</span></div>
+            <div class="item-sub"><span>International Asia Study Program (Exchange)</span><span>Hong Kong, China</span></div>
             <p>Courses: Environment Politics, Gender Study, Death Anthropology</p>
         </div>
     </section>
@@ -87,87 +87,66 @@
     <section>
         <h2>Work & Project Experience</h2>
         <div class="item">
-            <div class="item-header">
-                <span>Shingta Translation Club</span>
-                <span>Sep 2022 - Present</span>
-            </div>
-            <div class="item-sub"><span>President</span><span>Beijing, China</span></div>
+            <div class="item-header"><span>Shingta Translation Club | President</span><span>2022.09 - Present</span></div>
             <ul>
-                <li>Leading a 34-member team; serving 10,000+ users via translation and multilingual correction projects.</li>
-                <li>Translated 64 articles (83,000 words) with over 25,000 views.</li>
-                <li>Compiled "A Decade of Shingta Anthology" (290,000 words), currently preparing for publication.</li>
+                <li>Managing 34-member team; translated 64 articles (83,000 words); 25,000+ views.</li>
+                <li>Compiled "A Decade of Shingta Anthology" (290,000 words) for upcoming publication.</li>
             </ul>
         </div>
 
         <div class="item">
-            <div class="item-header">
-                <span>SELWHA Company</span>
-                <span>Mar 2025 - Present</span>
-            </div>
-            <div class="item-sub"><span>Knowledge Expert</span><span>Hong Kong, China</span></div>
+            <div class="item-header"><span>SELWHA Company | Knowledge Expert</span><span>2025.03 - Present</span></div>
             <ul>
-                <li>Developing Tibetan calendrical app based on indigenous knowledge.</li>
-                <li>Built a cultural framework incorporating Tibetan myths and symbols for product design.</li>
+                <li>Developing Tibetan calendrical app and cultural framework for heritage-inspired product design.</li>
             </ul>
         </div>
 
         <div class="item">
-            <div class="item-header">
-                <span>Basel Convention Asia-Pacific Regional Centre</span>
-                <span>Jan 2023 - Feb 2023</span>
-            </div>
-            <div class="item-sub"><span>Research Assistant</span><span>Beijing, China</span></div>
-            <ul>
-                <li>Co-authored "Key Focus Areas at the UN Environment Assembly" in China Environmental Management Report 2024.</li>
-                <li>Assisted in drafting the framework for "Thirty Years of the Basel Convention".</li>
-            </ul>
+            <div class="item-header"><span>Basel Convention Asia-Pacific Regional Centre</span><span>2023.01 - 2023.02</span></div>
+            <p>Research Assistant: Co-authored UNEA trend analysis in <i>China Environmental Management Report 2024</i>.</p>
         </div>
 
         <div class="item">
-            <div class="item-header">
-                <span>“D.LANE” Minor Ethnic Youth Career Development Program</span>
-                <span>Jun 2024 - Present</span>
-            </div>
-            <div class="item-sub"><span>Co-Founder & Lead Organizer</span><span>Beijing, China</span></div>
-            <ul>
-                <li>Organized 6 seminars for 1,500+ participants and launched the first volunteer training camp.</li>
-                <li>Built a resource-sharing platform growing the community to 570 members.</li>
-            </ul>
+            <div class="item-header"><span>“D.LANE” Minority Youth Career Development</span><span>2024.06 - Present</span></div>
+            <p>Co-Founder: Reached 1,500+ participants via 6 seminars; community of 570+ ethnic minority youth.</p>
+        </div>
+
+        <div class="item">
+            <div class="item-header"><span>Tsinghua University Art Museum | Volunteer</span><span>2023.10 - Present</span></div>
+            <p>50+ service hours; led 7 tours for African Art Exhibitions and organized "Tibetan Light" workshop.</p>
         </div>
     </section>
 
     <section>
         <h2>Academic Practice & International Engagement</h2>
         <div class="item">
-            <div class="item-header"><span>Grassland Carbon Emissions Trading Projects</span><span>Apr 2025 - Present</span></div>
-            <p>Conducting 6-month fieldwork in Qinghai-Tibet Plateau; supported by Tsinghua's "Academic Promotion Program".</p>
+            <div class="item-header"><span>Grassland Carbon Emissions Trading Fieldwork</span><span>2025.04 - Present</span></div>
+            <p>6-month study on Qinghai-Tibet Plateau carbon offset; supported by Tsinghua "Academic Promotion Program".</p>
         </div>
         <div class="item">
-            <div class="item-header"><span>Survey on Rangeland Property Rights (with Prof. Ian Scoones)</span><span>Aug 2024 - Sep 2024</span></div>
-            <p>Interviewed 25+ herders on property rights across four national park sites in Qinghai.</p>
+            <div class="item-header"><span>Survey on Rangeland Property Rights (Qinghai)</span><span>2024.08 - 2024.09</span></div>
+            <p>Fieldwork with Prof. Ian Scoones (IDS); interviewed 25+ herders on evolving land rights.</p>
         </div>
         <div class="item">
-            <div class="item-header"><span>Social Practice in Cambodia</span><span>Jun 2024 - Jul 2024</span></div>
-            <p>Authored Khmer Rouge reports; Awarded Tsinghua 2024 Social Practice "Silver Award".</p>
+            <div class="item-header"><span>Social Practice in Cambodia & USA</span><span>2023.06 - 2024.07</span></div>
+            <p>Authored Khmer Rouge reports (Silver Award); Policy exchange at Harvard, Brookings, and U.S. State Dept.</p>
         </div>
         <div class="item">
-            <div class="item-header"><span>World Youth Development Forum</span><span>Jun 2022 - Jul 2022</span></div>
-            <p>Attended as a Chinese youth delegate and coordinated liaison for 500+ participants.</p>
+            <div class="item-header"><span>World Youth Development Forum | Delegate</span><span>2022.06 - 2022.07</span></div>
+            <p>Liaison for 500+ participants; managing logistics for Global Alliance of Universities on Climate.</p>
         </div>
     </section>
 
     <section>
-        <h2>Honors & Awards</h2>
-        <div class="grid"><span>Tsinghua Outstanding Volunteer Service Award</span><span>2024.11</span></div>
-        <div class="grid"><span>4th Place, Tsinghua Men’s Diving Doubles Competition</span><span>2024.12</span></div>
-        <div class="grid"><span>Tsinghua Zhiqin Global Competency Scholarship</span><span>2024.05</span></div>
-        <div class="grid"><span>Sakya County Educational Outstanding Scholarship</span><span>2021.09</span></div>
-    </section>
-
-    <section>
-        <h2>Languages & Skills</h2>
-        <div class="skill-line"><span class="bold">Languages:</span> Tibetan (Native), Mandarin (Prof.), English (Fluent), Spanish (Beginner)</div>
-        <div class="skill-group"><span class="bold">Skills:</span> Python, Stata, SPSS, Photoshop, DaVinci, CapCut</div>
+        <h2>Honors & Skills</h2>
+        <div class="grid"><span class="bold">Tsinghua Outstanding Volunteer Service Award</span><span>2024.11</span></div>
+        <div class="grid"><span class="bold">Tsinghua Zhiqin Global Competency Scholarship</span><span>2024.05</span></div>
+        <div class="grid"><span class="bold">4th Place, Tsinghua Men’s Diving Competition</span><span>2024.12</span></div>
+        
+        <div class="skill-line">
+            <p><span class="bold">Languages:</span> Tibetan (Native), Mandarin (Prof.), English (Fluent), Spanish (Beginner)</p>
+            <p><span class="bold">Skills:</span> Python, Stata, SPSS, Photoshop, Video Editing (DaVinci, CapCut)</p>
+        </div>
     </section>
 </div>
 
