@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>贡嘎次仁 | Kunga Tsering</title>
+    <style>
+        :root { --main: #800000; --text: #333; --bg: #f9f9f9; }
+        body { font-family: "PingFang SC", "STHeiti", sans-serif; margin: 0; background: var(--bg); color: var(--text); line-height: 1.6; }
+        nav { background: #fff; padding: 15px 10%; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 10px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 1000; }
+        .hero { background: #fff; padding: 60px 10%; text-align: center; border-bottom: 5px solid var(--main); }
+        .container { max-width: 850px; margin: 30px auto; padding: 0 20px; }
+        .card { background: #fff; padding: 25px; border-radius: 12px; margin-bottom: 25px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border: 1px solid #eee; }
+        h2 { color: var(--main); border-bottom: 2px solid var(--main); display: inline-block; margin-bottom: 20px; font-size: 1.5em; }
+        h3 { margin-top: 0; color: #000; }
+        .lang-btn { cursor: pointer; padding: 8px 20px; border: 2px solid var(--main); color: var(--main); font-weight: bold; border-radius: 25px; transition: 0.3s; background: transparent; }
+        .lang-btn:hover { background: var(--main); color: #fff; }
+        .hidden { display: none; }
+        .tag { display: inline-block; background: #eee; padding: 2px 10px; border-radius: 4px; font-size: 0.85em; margin-right: 5px; color: #555; }
+    </style>
+</head>
+<body>
+
+<nav>
+    <div style="font-weight: 900; font-size: 1.3em;">KUNGA TSERING</div>
+    <button class="lang-btn" onclick="toggleLang()">English / 中文</button>
+</nav>
+
+<div class="hero">
+    <h1 id="main-name">贡嘎次仁</h1>
+    <p id="main-sub">清华大学 | 环境工程 & 社会学</p>
+    <div style="color: #666; font-size: 0.9em;">ggcr21@mails.tsinghua.edu.cn | (+86) 157-1002-9790</div>
+</div>
+
+<div class="container">
+    <div id="zh-content">
+        <section>
+            <h2>研究兴趣</h2>
+            <p>气候变化、社会不平等、民族研究、性别、发展研究、游牧与农政研究。</p>
+        </section>
+        
+        <section>
+            <h2>经历亮点</h2>
+            <div class="card">
+                <h3>木马翻译社 (Shingta) | 负责人</h3>
+                <span class="tag">管理</span> <span class="tag">藏语翻译</span>
+                <p>领导34人团队，完成8.3万字翻译，编纂29万字《十年文集》。</p>
+            </div>
+            <div class="card">
+                <h3>SELWHA 创业公司 | 知识专家</h3>
+                <span class="tag">本土知识</span> <span class="tag">历算系统</span>
+                <p>开发藏族本土历算知识系统，建构融合传统文化与现代工艺的产品体系。</p>
+            </div>
+            <div class="card">
+                <h3>“我们的路”少数民族青年项目 | 发起人</h3>
+                <span class="tag">公益</span> <span class="tag">职业发展</span>
+                <p>搭建570人资源平台，职业分享覆盖1500+人次，开展志愿者训练营。</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>学术实践</h2>
+            <div class="card">
+                <h3>青藏高原草原碳汇调研 (2025)</h3>
+                <p>清华大学“学推计划”支持。在青海进行为期6个月的在地调研，评估碳抵消政策。</p>
+            </div>
+        </section>
+    </div>
+
+    <div id="en-content" class="hidden">
+        <section>
+            <h2>Research Interests</h2>
+            <p>Climate Change, Social Inequality, Ethnic Studies, Gender, Development Studies, Nomadic and Agrarian Studies.</p>
+        </section>
+
+        <section>
+            <h2>Key Experience</h2>
+            <div class="card">
+                <h3>Shingta Translation Club | President</h3>
+                <span class="tag">Leadership</span> <span class="tag">Translation</span>
+                <p>Led 34-member team, translated 83k words, and compiled a 10-year anthology (290k words).</p>
+            </div>
+            <div class="card">
+                <h3>SELWHA Company | Knowledge Expert</h3>
+                <span class="tag">Indigenous Knowledge</span>
+                <p>Developing Tibetan calendrical app based on indigenous knowledge and cultural framework.</p>
+            </div>
+            <div class="card">
+                <h3>D.LANE Minority Youth Program | Co-Founder</h3>
+                <span class="tag">Empowerment</span> <span class="tag">Mentorship</span>
+                <p>Built a community for 570+ members, reaching 1,500+ participants via seminars.</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>Fieldwork</h2>
+            <div class="card">
+                <h3>Grassland Carbon Trading Project (2025)</h3>
+                <p>Conducting 6-month fieldwork in Qinghai-Tibet Plateau (Tsinghua "Academic Promotion Program").</p>
+            </div>
+        </section>
+    </div>
+</div>
+
+<script>
+    function toggleLang() {
+        const zh = document.getElementById('zh-content');
+        const en = document.getElementById('en-content');
+        const name = document.getElementById('main-name');
+        const sub = document.getElementById('main-sub');
+
+        if (zh.classList.contains('hidden')) {
+            zh.classList.remove('hidden'); en.classList.add('hidden');
+            name.innerText = "贡嘎次仁"; sub.innerText = "清华大学 | 环境工程 & 社会学";
+        } else {
+            zh.classList.add('hidden'); en.classList.remove('hidden');
+            name.innerText = "Kunga Tsering"; sub.innerText = "Tsinghua University | Env. Engineering & Sociology";
+        }
+    }
+</script>
+</body>
+</html>
