@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="bo">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Academic Archive | ཡིག་སྒྱུར་གླེང་སྟེགས།</title>
+    <style>
+        :root { 
+            --main: #800000; 
+            --text: #1a1a1a; 
+            --paper: #fdfaf5; 
+        }
+        
+        body { 
+            margin: 0; 
+            background-color: var(--paper);
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.04'/%3E%3C/svg%3E");
+            color: var(--text);
+            font-family: "Garamond", "Georgia", serif;
+            display: flex;
+            justify-content: center;
+        }
+
+        .container { 
+            max-width: 800px; 
+            width: 100%;
+            background: rgba(255, 255, 255, 0.7); 
+            padding: 80px 70px;
+            margin: 50px 20px;
+            border: 1px solid rgba(0,0,0,0.08);
+            min-height: 90vh;
+        }
+
+        header { 
+            text-align: center; 
+            margin-bottom: 80px; 
+            border-bottom: 2px solid #000;
+            padding-bottom: 30px;
+        }
+        
+        h1 { margin: 0; font-size: 2.4em; text-transform: uppercase; letter-spacing: 5px; font-weight: 500; }
+        .subtitle { font-size: 1.2em; color: #666; margin-top: 15px; font-family: "Microsoft Himalaya", serif; }
+
+        /* 文章条目列表 */
+        .article-list { margin-top: 20px; }
+
+        .article-item {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+            margin-bottom: 50px;
+            padding: 20px;
+            border: 1px solid transparent;
+            transition: 0.3s;
+        }
+
+        .article-item:hover {
+            border: 1px solid var(--main);
+            background: rgba(255, 255, 255, 0.8);
+        }
+
+        .date-tag {
+            font-size: 0.85em;
+            color: var(--main);
+            font-weight: bold;
+            letter-spacing: 1px;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .tibetan-title {
+            font-family: "Microsoft Himalaya", "Noto Sans Tibetan", serif;
+            font-size: 2.2em;
+            display: block;
+            margin-bottom: 15px;
+            line-height: 1.2;
+            color: #000;
+        }
+
+        .english-desc {
+            font-size: 1em;
+            color: #555;
+            line-height: 1.6;
+            font-style: italic;
+        }
+
+        footer {
+            margin-top: 100px;
+            text-align: center;
+            font-size: 0.85em;
+            color: #999;
+            border-top: 1px solid #eee;
+            padding-top: 30px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>Academic Archive</h1>
+        <div class="subtitle">ཡིག་སྒྱུར་དང་དཔྱད་རྩོམ་ཕྱོགས་བསྒྲིགས།</div>
+    </header>
+
+    <div class="article-list">
+        
+        <a href="article1.html" class="article-item">
+            <span class="date-tag">MARCH 2026</span>
+            <span class="tibetan-title">རྒྱུན་རིང་བའི་གསར་བརྗེ་ལྗང་ཁུ།</span>
+            <span class="english-desc">"The Long Green Revolution" - A sociological translation and study on the evolution of agrarian capitalism and the Green Revolution.</span>
+        </a>
+
+        <div class="article-item" style="opacity: 0.4;">
+            <span class="date-tag">UPCOMING</span>
+            <span class="tibetan-title">ཞིབ་འཇུག་རྩོམ་ཡིག་གསར་པ།</span>
+            <span class="english-desc">Future research on grassland carbon trading and nomadic studies...</span>
+        </div>
+
+    </div>
+
+    <footer>
+        Kunga Tsering | Tsinghua University <br>
+        Sociology & Environmental Studies
+    </footer>
+</div>
+
+</body>
+</html>
