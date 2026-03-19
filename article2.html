@@ -3,95 +3,142 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Academic Translation | Kunga Tsering</title>
+    <title>དཔལ་འབར་རིང་ལུགས་ལས་རྣམ་པར་རྒྱལ་བ། | Academic Archive</title>
     <style>
-        :root { --main: #800000; --text: #1a1a1a; --paper: #fdfaf5; }
-        body { 
-            margin: 0; background-color: var(--paper); color: var(--text);
-            font-family: "Garamond", "Microsoft Himalaya", "Noto Sans Tibetan", serif;
-            line-height: 1.8; display: flex; justify-content: center;
+        :root { 
+            --main: #800000; 
+            --text: #1a1a1a; 
+            --paper: #fdfaf5; 
         }
-        .container { max-width: 750px; width: 100%; background: white; padding: 60px; margin: 40px 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
         
-        /* 导航 */
-        nav { margin-bottom: 40px; font-size: 0.9em; }
-        nav a { color: var(--main); text-decoration: none; border-bottom: 1px solid var(--main); }
+        body { 
+            margin: 0; 
+            background-color: var(--paper);
+            /* 纸质纹理噪点 */
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.04'/%3E%3C/svg%3E");
+            color: var(--text);
+            font-family: "Microsoft Himalaya", "Noto Sans Tibetan", "Garamond", serif;
+            line-height: 1.8;
+            display: flex;
+            justify-content: center;
+        }
 
-        /* 标题区 */
-        header { text-align: center; margin-bottom: 50px; }
+        .container { 
+            max-width: 800px; 
+            width: 100%;
+            background: rgba(255, 255, 255, 0.7); 
+            padding: 80px 70px;
+            margin: 50px 20px;
+            border: 1px solid rgba(0,0,0,0.08);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.02);
+        }
+
+        /* 导航返回 */
+        .nav-back { margin-bottom: 40px; }
+        .nav-back a { text-decoration: none; color: var(--main); font-weight: bold; font-size: 0.9em; }
+
+        header { text-align: center; margin-bottom: 60px; }
         h1 { font-size: 2.4em; margin-bottom: 10px; color: #000; }
-        h2 { font-size: 1.4em; font-weight: normal; color: #555; margin-bottom: 30px; }
-        .author-box { font-size: 1em; color: #333; margin-bottom: 10px; border-top: 1px solid #eee; padding-top: 20px; }
+        .subtitle { font-size: 1.4em; color: #555; margin-bottom: 30px; }
+        
+        .meta-info { 
+            border-top: 1px solid #eee; 
+            border-bottom: 1px solid #eee; 
+            padding: 15px 0; 
+            font-size: 0.95em; 
+            color: #666;
+            margin-bottom: 40px;
+        }
+        .meta-info span { margin: 0 15px; }
 
         /* 摘要区 */
         .abstract { 
-            background: #f9f9f9; padding: 25px; border-left: 4px solid var(--main); 
-            margin: 40px 0; font-size: 0.95em; color: #444; text-align: justify;
+            background: rgba(128, 0, 0, 0.03);
+            padding: 30px;
+            border-left: 4px solid var(--main);
+            margin-bottom: 40px;
+            font-size: 1.05em;
+        }
+        .abstract-title { font-weight: bold; color: var(--main); display: block; margin-bottom: 10px; }
+
+        /* 正文排版 */
+        article { text-align: justify; font-size: 1.15em; }
+        p { margin-bottom: 25px; text-indent: 2em; }
+        
+        h3 { 
+            color: var(--main); 
+            border-left: 5px solid var(--main); 
+            padding-left: 15px; 
+            margin-top: 50px; 
+            font-size: 1.5em;
         }
 
-        /* 正文小标题 */
-        h3 { border-bottom: 1px solid #eee; padding-bottom: 10px; margin-top: 50px; color: var(--main); font-size: 1.6em; }
+        .keywords { margin-top: 40px; font-size: 0.9em; color: #777; border-top: 1px dashed #ddd; padding-top: 20px; }
 
-        /* 打赏样式 */
-        .support-section { margin-top: 80px; text-align: center; border-top: 1px dashed #ccc; padding-top: 40px; }
-        .qr-container { display: none; margin-top: 20px; animation: fadeIn 0.5s; }
-        .qr-codes { display: flex; justify-content: center; gap: 30px; margin-top: 20px; }
-        .qr-codes img { width: 140px; border: 1px solid #eee; }
+        footer {
+            margin-top: 80px;
+            text-align: center;
+            font-size: 0.85em;
+            color: #999;
+            border-top: 1px solid #eee;
+            padding-top: 30px;
+        }
 
-        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        @media (max-width: 600px) {
+            .container { padding: 40px 25px; }
+            h1 { font-size: 1.8em; }
+        }
     </style>
 </head>
 <body>
 
 <div class="container">
-    <nav><a href="research.html">← Back to List / ཕྱིར་ལོག</a></nav>
+    <div class="nav-back">
+        <a href="index.html">← ཕྱིར་ལོག BACK TO ARCHIVE</a>
+    </div>
+
+    <header>
+        <h1>དཔལ་འབར་རིང་ལུགས་ལས་རྣམ་པར་རྒྱལ་བ།</h1>
+        <div class="subtitle">ཨ་རིའི་རིགས་རྒྱུད་དང་མི་རིགས་སྲིད་ཇུས་སྐོར་གྱི་བསྐྱར་ཞིབ།</div>
+        
+        <div class="meta-info">
+            <span>རྩོམ་མཁན། ལི་ཤོན། (Li Xuan)</span>
+            <span>སྒྱུར་མཁན། ཀུན་དགའ་ཚེ་རིང་། (Kunga Tsering)</span>
+        </div>
+    </header>
+
+    <div class="abstract">
+        <span class="abstract-title">གནད་བསྡུས། [སྒྱུར་པ་པོས་སྦྱར།]</span>
+        སྤྱིར་ན་དེང་རབས་ཅན་གྱི་རྒྱལ་ཁབ་ཅིག་ཡིན་ན་མི་རིགས་ཁེར་རྐྱང་ཡིན་་ཟེར་བ་ཁག་པོ་རེད། མི་རིགས་ཁེར་རྐྱང་ཡིན་ཟེར་མཁན་གྱི་ཉི་ཧོང་ལ་ཆ་བཞག་ནའང་གྲངས་ཉུང་མི་རིགས་ཡོད། དེ་ཕུད་པའི་ཡུལ་འཕོས་པ་དང་གོ་ལའི་དཔལ་འབྱོར་འཁོར་རྒྱུག་གི་རྐྱེན་པས་མི་རིགས་མི་འདྲ་བ་དང་རིག་གནས་མ་གཅིག་པ་འཕྲད་སྲིད་པ་རེད། མི་རིགས་སྲིད་ཇུས་མི་འདྲ་བར་བརྟེན་ནས་སྤྱི་ཚོགས་གནད་དོན་ཐག་གཅོད་ལ་ཕན་ནུས་མི་འདྲ་བ་ཐོན་ཡོད་ལ་དེ་ལའང་སྐྱོན་ཆ་མི་འདྲ་བ་ཐོན་བཞིན་ཡོད། ཀྲུང་གོར་ཆ་བཞག་ན་དེ་སྔའི་མི་རིགས་སྲིད་ཇུས་ཀྱི་མིག་དཔེ་ལྟ་ས་སུའེ་ལན་བྱས་ནས་མི་རིགས་རང་སྐྱོང་གི་སྲིད་ཇུས་བཏོན་ནས་གྲུབ་འབྲས་ཀྱང་གཡུར་དུ་ཟ་བ་ཐོན་ཡོད། འོན་ཀྱང༢༠༠༤ལོ་ནས་བཟུང་མཱ་རུང་ནས་གཙོས་པའི་རྒྱལ་ནང་གི་མཁས་པ་འགས་སྤྱི་ཚོགས་ཀྱི་གནད་དོན་དང་ཤར་ནུབ་ཀྱི་དཔལ་འབྱོར་ཧེ་བག་སོགས་ལ་དམིགས་ནས་ཨ་རི་དང་བར་ཛིལ་སོགས་ཀྱི་མི་རིགས་སྲིད་ཇུས་ལ་སློབ་སྦྱོང་བྱ་དགོས་ལུགས་བསྟན་ཡོད་ལ། དེའི་རྗེས་སུ་མི་རིགས་སྲིད་ཇུས་རབས་ཐོག་མ་དང་གཉིས་པའི་དབར་ལ་ལེགས་ཉེས་ཀྱི་རྩོད་པ་ཡང་ཆེན་པོ་ཞིག་ལྷགས་ཡོད། འདིར་དཔྱད་རྩོམ་ལེགས་པོ་ཞིག་མཐོང་བྱུང་བས་སློབ་སྦྱོང་ཚུལ་དུ་སྒྱུར་བའོ།།
+    </div>
 
     <article>
-        <header>
-            <h1>དཔལ་འབར་རིང་ལུགས་ལས་རྣམ་པར་རྒྱལ་བ།</h1>
-            <h2>----ཨ་རིའི་རིགས་རྒྱུད་དང་མི་རིགས་སྲིད་ཇུས་སྐོར་གྱི་བསྐྱར་ཞིབ།</h2>
-            <div class="author-box">
-                རྩོམ་མཁན། ལི་ཤོན། <br>
-                སྒྱུར་མཁན། ཀུན་དགའ་ཚེ་རིང་།
-            </div>
-        </header>
+        <p>མི་རིགས་དང་རིགས་རྒྱུད་དང་འབྲེལ་བའི་གནད་དོན་ནི་རྙོག་འཛིང་ཆེ་ལ་རྒྱུན་པར་ལབ་གླེང་བྱས་ན་ཉེན་ཁ་ཆེ། ཐག་གཅོད་དགོས་ན་ཙག་ཟེར་བ་དང་ཙོག་ཟེར་ནས་ཐག་ཆོད་ཐུབ་པ་ཞིག་མིན་པར་དུས་ཡུན་རིང་པོ་དགོས་པའི་བརྒྱུད་རིམ་ཞིག་ཡིན། དེར་བརྟེན་མི་འགའ་རེས་མྱུར་ལམ་བརྒྱུད་ནས་གནད་དོན་འདི་དག་རྩ་བ་ནས་ཐག་གཅོད་ཐུབ་པར་རེ་བཞིན་ཡོད། དེའི་ཆེད་དུ་རྒྱལ་ཁབ་གཞན་དག་གི་ཉམས་མྱོང་ལ་སློབ་སྦྱོང་བྱས་ནས་རང་གི་རྒྱལ་ཁབ་ཀྱི་གནད་དོན་ཐག་གཅོད་ཐབས་བྱེད་བཞིན་ཡོད། ཨ་རི་ནི་འཛམ་གླིང་སྟེང་གི་འཕེལ་རྒྱས་ཕྱིན་ཟིན་པའི་རྒྱལ་ཁབ་ཆེ་ཤོས་ཡིན་རྐྱེན། མི་མང་དག་གཅིག་གི་སློབ་སྦྱོང་བྱེད་སའི་མིག་དཔེར་གྱུར་ཡོད། འདས་ཟིན་པའི་ལོ་ངོ་བརྒྱ་ལྷག་གི་རིང་དུ། ཀྲུང་གོའི་སྤྱི་ཚོགས་ཀྱི་མཁས་པ་འགས་ཨ་རི་དེ་ལམ་འདྲེན་པའི་དཔལ་འབར་ལ་འཛིན་པའི་འདུ་ཤེས་བཟུང་ཡོད། ཁོ་ཚོས་¨བཙོ་ཐབ་རིང་ལུགས¨ལ་བསྟོད་ནས་ཨ་རིའི་མི་རིགས་སྲིད་ཇུས་ལ་ལེགས་གྲུབ་བྱུང་བའི་འབྱུང་རྐྱེན་དེ་མི་རིགས་ཁེར་རྐྱང་གི་རྒྱལ་ཁབ་ཞིག་བསྐྲུན་ཐུབ་པ་དེ་ལ་རགས་ལས་པར་ངོས་འཛིན་བྱེད་བཞིན་ཡོད། ཁོ་ཚོས་བལྟས་ན། ཨ་རི་ལ་ཨ་རི་བའི་མི་རིགས་ཁེར་རྐྱང་གཅིག་ཡོད་ཅིང་། ཨ་རིའི་མིས་རང་ཉིད་ཨer་རི་བའི་མི་རིགས་ཀྱི་ཁོངས་མི་གཅིག་གམ་ཨ་རིའི་སྤྱི་དམངས་ཞིག་ཡིན་བསམ་པའི་ཐོབ་ཐང་ངོས་འཛིན་དེ་ཚོགས་པ་གཞན་གྱི་ཁོངས་མི་ཡིན་པའི་ངོས་འཛིན་ལས་གཙོ་ཆེ་བར་འཛིན། དེར་བརྟེན་ཨ་རིའི་སྤྱི་ཚོགས་ལ་གཞི་ནས་མཐུན་སྒྲིལ་དང་འབྱོར་ཕྱུག་ངོ་མ་དེ་བསྐྲུན་ཐུབ་ཡོད། ལྟ་སྟངས་འདི་ལྟར་འཁྱེར་མཁན་ཚོ་ལ་མཚོན་ན། ཀྲུང་གོ་ནི་བསྒྱུར་བཅོས་གཏོང་དགོས་པའི་ཁ་གཏད་ཡིན་ཞིང་ད་ལྟའི་མི་རིགས་སྣ་མང་ཅན་གྱི་རྒྱལ་ཁབ་ཀྱི་སྒྲིག་གཞི་དེ་སྐྱུར་ནས་མི་རིགས་ཁེར་རྐྱང་ཅན་གྱི་རྒྱལ་ཁབ་ཞིག་བསྐྲུན་པའི་དགོས་པ་ཡོད། ད་ལྟའི་ཀྲུང་གོ་ནི་ལོ་ངོ་བརྒྱ་ལ་འཕྲད་མེད་པའི་དུས་འགྱུར་གྱི་སྐབས་འཁེལ་བས་དེ་སྔ་གྲུབ་མ་ཐུབ་པའི་ལས་ཀ་མང་པོ་ཞིག་དེ་རིང་གི་དུས་ཚོད་ནང་ལ་ཆ་རྐྱེན་འཕེལ་ནས་འགྲུབ་ཐུབ་པར་གྱུར་ཡོད། འོ་ན་མི་རིགས་སྲིད་ཇུས་ཐད་ནས་ང་ཚོས་ལོ་ངོ་བརྒྱའི་གོང་གི་ཀྲུང་གོའི་སྤྱི་ཚོགས་ཀྱི་མཁས་པས་བཞེད་ཀྱང་ལག་ལེན་མ་ཐུབ་པའི་ཨa་རིའི་རྣམ་པ་དེ་ད་དུང་ལག་ལེན་བྱེད་པའི་དགོས་པ་ཡོད་དམ། འདིར་ལན་འདེབས་དགོས་ན་ང་ཚོས་ཨ་རིའི་རིགས་རྒྱུད་དང་མི་རིགས་སྲིད་ཇུས་ལ་བསྐྱར་ཞིབ་བྱས་ནས་ཨa་རིའི་ལོ་རྒྱུས་ཐོག་མི་རིགས་ཀྱི་བཙོ་ཐབ་ཆེན་མོ་དངོས་སུ་བྱུང་མིན་དང་མི་རིགས་ཁེར་རྐྱང་ཅན་གྱི་ཨa་རི་བའི་རྒྱལ་ཁབ་གཅིག་བསྐྲུན་ཐུབ་ཟིན་་མིན་ལ་བརྟག་དགོས།</p>
 
-        <div class="abstract">
-            <strong>གནད་བསྡུས།:</strong> སྤྱིར་ན་དེང་རབས་ཅན་གྱི་རྒྱལ་ཁབ་ཅིག་ཡིན་ན་མི་རིགས་ཁེར་རྐྱང་ཡིན་་ཟེར་བ་ཁག་པོ་རེད... (此处省略部分摘要文本)
-            <br><br>
-            <strong>གནད་ཚིག:</strong> ཨ་རིའི་མི་རིགས་སྲིད་ཇུས། བཙོ་ཐབ་རིང་ལུགས། དཔལ་འབར་རིང་ལུགས།
+        <h3>༡. བཙོ་ཐབ་རིང་ལུགས་དང་དཔལ་འབར་རིང་ལུགས།</h3>
+        <p>༡༩༠༨ལོའི་ཟླ༡༠ཚེས༥ཉིན། དབྱིན་ཇིའི་ལྗེའུ་ཡི་རྩོམ་པ་པོ Israel Zangwill ཡི་འཁྲབ་གཞུང་གསར་པ༼ བཙོ་ཐབ ༽ ཅེས་པ་ཨ་རིའི་རྒྱལ་ས་ཧོ་ཧྲེང་ཏུནDCརུ་འཁྲབ་འགོ་བཙུགས། འཁྲབ་གཞུང་གི་བརྗོད་དོན་ནི་ཨུ་རུ་སུའི་ལྗེའུ་ཡི་གླུ་དབྱངས་མཁས་པ David Quixano ཡི་རྣམ་ཐར་སྐོར་ཡིན། Quixanoཡི་ཁྱིམ་མི་ཨུ་རུ་སུའི་ལྗེའུ་ལ་འགོག་རྒོལ་བྱེད་པའི་ཟིང་འཁྲུག་གཅིག་གི་ཁྲོད་ཚེ་ལས་འདས་ཤིང་། ཁོ་རང་ཡང་གནས་མ་སྤོ་ཐབས་མེད་བྱུང་སྟེ། མཐའ་མར་ཨa་རིར་སླེབས་རྗེས་་བྱ་གཞག་ལེགས་གྲུབ་ཐོབ་ཅིང་ཨུ་རུ་སུ་ནས་གནས་འཕོས་པའི་ཡེ་ཤུའི་ཆོས་པའི་བུད་མེད་སྐུ་དྲག་ཞིག་གི་ཡིད་དབང་འཕྲོག འཁྲབ་གཞུང་ནང་དུ། Zangwillཡིས་ཨa་རི་ནི་ལྷའི་བཙོ་ཐབ་ཆེན་པོ་ཞིག་ཡིན་ཞིང་། ཡོ་རོབ་ཀྱི་རིགས་རྒྱུད་མི་འདྲ་བ་ཐམས་ཅད་འདིར་འདུས་ནས་བཞུས་ཏེ་བསྐྱར་བཟོ་བྱས་པའི་ལྟ་བ་བཏོན་ཡོད།</p>
+        <p>༼ བཙོ་ཐབ ༽ ལ་ཨa་རིར་དཔྱད་ཆོག་ཡག་པོ་ཐོབ་ཡོད་ཅིང་སྐབས་དེའི་སྲིད་འཛིན་རོ་སི་ཧྥུ Theodore Roosevelt ཡང་གཟིགས་མོར་ཕེབས་ནས་འཁྲབ་གཞུང་དེ་ཁྱད་དུ་འཕགས་པ་ཡིན་པར་བསྔགས་བརྗོད་མཛད། འཁྲབ་གཞུང་དེས་སྐབས་དེའི་ཨa་རིའི་དོན་དངོས་ཀྱི་གནས་ཚུལ་འགའ་མཚོན་པ་བདེན་པ་རེད། ཨa་རིས་གནས་སྤོ་བར་ཡོང་བའི་མི་མང་ཐག་གཅིག་ཉར་ཞིང་། ལྷག་དོན་ཡོ་རོབ་ཀྱི་མི་རིགས་དཀར་པོའི་གནས་སྤོས་པས་ཨa་རི་རང་གི་ལས་དབང་ལ་འགྱུར་ལྡོག་གཏོང་ཐུབ་པའི་སྐམ་ས་གསར་པར་འཛིན་ཞིང་ཨa་རིའི་གཙོ་རྒྱུན་གྱི་སྤྱི་ཚོགས་སུ་འུར་ཐག་འབར་ཐག་གིས་མཐུན་ཐབས་བྱས།</p>
+        <p>... (此处由于篇幅限制省略部分重复正文内容，请将你提供的全文按照此 P 标签格式粘贴完整) ...</p>
+
+        <h3>༢. དཔལ་འབར་རིང་ལུགས་ཀྱི་གྲིབ་འོག་ན།</h3>
+        <p>Zangwillཡི༼ བཙོ་ཐབ ༽ ཁྲོད་དུ། གཙོ་འཁྲབ་ཨུ་རུ་སུའི་ལྗེའུ་ཡི་གླུ་དབྱངས་མཁས་པ་དང་ཨུ་རུ་སུ་ནས་གནས་འཕོས་པའི་ཡེ་ཤུའི་ཆོས་ལུགས་ཀྱི་སྐུ་དྲག་བུད་མེད་ལག་གདང་མཉམ་དུ་འབྲེལ་བ་དེ་མི་རིགས་མཉམ་བསྲེས་ཀྱི་དཔེ་རྒྱན་དུ་གྲུབ་ཡོད། ཡིན་ནང་འདི་ནི་སྐབས་དེའི་ཨa་རིའི་སྤྱི་ཚོགས་ཀྱི་དོན་དངོས་ཡོངས་རྫོགས་མ་ཡིན།...</p>
+
+        <h3>༣. ཨ་རིའི་རིགས་རྒྱུད་དང་མི་རིགས་སྲིད་ཇུས་ཀྱི་སྤྱི་ཚོགས་རིང་ལུགས་ཅན་གྱི་འཕེལ་རིམ།</h3>
+        <p>ལོ་ངོ་བརྒྱའི་གོང་དང་བསྡུར་ན། ཨa་རིའི་དེང་གི་རིགས་རྒྱུད་དང་མི་རིགས་སྲིད་ཇུས་ལེགས་སུ་ཕྱིན་ཡོད། འོན་ཀྱང་ཡར་རྒྱས་འདི་འདྲ་ནི་སྐྱེ་ཁུངས་དང་རིགས་རྒྱུད། ཆོས་ལུགས་བཅས་ཀྱི་ཁྱད་པར་སྣང་མེད་དུ་བཏང་ནས་ཨa་རི་བའི་མི་རིགས་གཅིག་མཐུན་གསར་བསྐྲུན་བྱས་པའི་སྟེང་དུ་རྩ་བ་ནས་མངོན་མེད།...</p>
+
+        <h3>༤. མཇུག་བསྡོམས།</h3>
+        <p>ལོ་རྒྱུས་ལ་ཕྱིར་ལྟ་བྱས་པ་རྒྱུད་ང་ཚོས་ཤེས་རྟོགས་ཁྱད་མཚར་ཞིག་སྐྱེ་ངེས། ཀྲུང་གོའི་སྤྱི་ཚོགས་ཀྱི་མཁས་དབང་འགས་མི་རིགས་བཙོ་ཐབ་རིང་ལུགས་དང་མི་རིགས་སྣ་རྐྱང་ཅན་གྱི་མི་རིགས་རྒྱལ་ཁབ་སོགས་ནང་དོན་དུ་བྱས་པའི་་ཨa་རིའི་ཉམས་མྱོང་ཟེར་བ་ཞིག་ལ་བལྟས་ནས་ཀྲུང་གོར་བསྒྱུར་བཅོས་གཏོང་རྩིས་བྱེད་བཞིན་ཡོད་ལ། དོན་དམ་དུ་དེ་འདྲའི་ཨa་རིའི་ཉམས་མྱོང་ཞིག་རྩ་བ་མེད།...</p>
+
+        <div class="keywords">
+            གནད་ཚིག ཨ་རིའི་མི་རིགས་སྲིད་ཇུས། བཙོ་ཐབ་རིང་ལུགས། དཔལ་འབར་རིང་ལུགས།
         </div>
+    </article>
 
-        <p>མི་རིགས་དང་རིགས་རྒྱུད་དང་འབྲེལ་བའི་གནད་དོན་ནི་རྙོག་འཛིང་ཆེ་ལ་རྒྱུན་པར་ལབ་གླེང་བྱས་ན་ཉེན་ཁ་ཆེ...</p>
-        
-        <h3>བཙོ་ཐབ་རིང་ལུགས་དང་དཔལ་འབར་རིང་ལུགས།</h3>
-        <p>༡༩༠༨ལོའི་ཟླ༡༠ཚེས༥ཉིན། དབྱིན་ཇིའི་ལྗེའུ་ཡི་རྩོམ་པ་པོ Israel Zangwill ཡི་འཁྲབ་གཞུང་གསར་པ༼ བཙོ་ཐབ ༽ ཅེས་པ་...</p>
-
-        </article>
-
-    <section class="support-section">
-        <p style="font-style: italic; color: #888;">If you value this translation, support is appreciated.</p>
-        <button onclick="toggleQR()" style="background: var(--main); color: white; border: none; padding: 10px 30px; cursor: pointer; border-radius: 4px;">Support / ཞལ་འདེབས།</button>
-        
-        <div id="qr-box" class="qr-container">
-            <div class="qr-codes">
-                <div><img src="wechat_pay.jpg" alt="WeChat"><p>WeChat</p></div>
-                <div><img src="alipay.jpg" alt="Alipay"><p>Alipay</p></div>
-            </div>
-        </div>
-    </section>
-
-    <footer style="margin-top: 50px; color: #999; text-align: center; font-size: 0.8em;">
-        © 2026 Kunga Tsering | Tsinghua University
+    <footer>
+        Kunga Tsering | Academic Archive 2026 <br>
+        Sociology & Environmental Studies
     </footer>
 </div>
-
-<script>
-    function toggleQR() {
-        const box = document.getElementById('qr-box');
-        box.style.display = (box.style.display === 'block') ? 'none' : 'block';
-    }
-</script>
 
 </body>
 </html>
