@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="bo">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Academic Translation | Kunga Tsering</title>
+    <style>
+        :root { --main: #800000; --text: #1a1a1a; --paper: #fdfaf5; }
+        body { 
+            margin: 0; background-color: var(--paper); color: var(--text);
+            font-family: "Garamond", "Microsoft Himalaya", "Noto Sans Tibetan", serif;
+            line-height: 1.8; display: flex; justify-content: center;
+        }
+        .container { max-width: 750px; width: 100%; background: white; padding: 60px; margin: 40px 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+        
+        /* 导航 */
+        nav { margin-bottom: 40px; font-size: 0.9em; }
+        nav a { color: var(--main); text-decoration: none; border-bottom: 1px solid var(--main); }
+
+        /* 标题区 */
+        header { text-align: center; margin-bottom: 50px; }
+        h1 { font-size: 2.4em; margin-bottom: 10px; color: #000; }
+        h2 { font-size: 1.4em; font-weight: normal; color: #555; margin-bottom: 30px; }
+        .author-box { font-size: 1em; color: #333; margin-bottom: 10px; border-top: 1px solid #eee; padding-top: 20px; }
+
+        /* 摘要区 */
+        .abstract { 
+            background: #f9f9f9; padding: 25px; border-left: 4px solid var(--main); 
+            margin: 40px 0; font-size: 0.95em; color: #444; text-align: justify;
+        }
+
+        /* 正文小标题 */
+        h3 { border-bottom: 1px solid #eee; padding-bottom: 10px; margin-top: 50px; color: var(--main); font-size: 1.6em; }
+
+        /* 打赏样式 */
+        .support-section { margin-top: 80px; text-align: center; border-top: 1px dashed #ccc; padding-top: 40px; }
+        .qr-container { display: none; margin-top: 20px; animation: fadeIn 0.5s; }
+        .qr-codes { display: flex; justify-content: center; gap: 30px; margin-top: 20px; }
+        .qr-codes img { width: 140px; border: 1px solid #eee; }
+
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <nav><a href="research.html">← Back to List / ཕྱིར་ལོག</a></nav>
+
+    <article>
+        <header>
+            <h1>དཔལ་འབར་རིང་ལུགས་ལས་རྣམ་པར་རྒྱལ་བ།</h1>
+            <h2>----ཨ་རིའི་རིགས་རྒྱུད་དང་མི་རིགས་སྲིད་ཇུས་སྐོར་གྱི་བསྐྱར་ཞིབ།</h2>
+            <div class="author-box">
+                རྩོམ་མཁན། ལི་ཤོན། <br>
+                སྒྱུར་མཁན། ཀུན་དགའ་ཚེ་རིང་།
+            </div>
+        </header>
+
+        <div class="abstract">
+            <strong>གནད་བསྡུས།:</strong> སྤྱིར་ན་དེང་རབས་ཅན་གྱི་རྒྱལ་ཁབ་ཅིག་ཡིན་ན་མི་རིགས་ཁེར་རྐྱང་ཡིན་་ཟེར་བ་ཁག་པོ་རེད... (此处省略部分摘要文本)
+            <br><br>
+            <strong>གནད་ཚིག:</strong> ཨ་རིའི་མི་རིགས་སྲིད་ཇུས། བཙོ་ཐབ་རིང་ལུགས། དཔལ་འབར་རིང་ལུགས།
+        </div>
+
+        <p>མི་རིགས་དང་རིགས་རྒྱུད་དང་འབྲེལ་བའི་གནད་དོན་ནི་རྙོག་འཛིང་ཆེ་ལ་རྒྱུན་པར་ལབ་གླེང་བྱས་ན་ཉེན་ཁ་ཆེ...</p>
+        
+        <h3>བཙོ་ཐབ་རིང་ལུགས་དང་དཔལ་འབར་རིང་ལུགས།</h3>
+        <p>༡༩༠༨ལོའི་ཟླ༡༠ཚེས༥ཉིན། དབྱིན་ཇིའི་ལྗེའུ་ཡི་རྩོམ་པ་པོ Israel Zangwill ཡི་འཁྲབ་གཞུང་གསར་པ༼ བཙོ་ཐབ ༽ ཅེས་པ་...</p>
+
+        </article>
+
+    <section class="support-section">
+        <p style="font-style: italic; color: #888;">If you value this translation, support is appreciated.</p>
+        <button onclick="toggleQR()" style="background: var(--main); color: white; border: none; padding: 10px 30px; cursor: pointer; border-radius: 4px;">Support / ཞལ་འདེབས།</button>
+        
+        <div id="qr-box" class="qr-container">
+            <div class="qr-codes">
+                <div><img src="wechat_pay.jpg" alt="WeChat"><p>WeChat</p></div>
+                <div><img src="alipay.jpg" alt="Alipay"><p>Alipay</p></div>
+            </div>
+        </div>
+    </section>
+
+    <footer style="margin-top: 50px; color: #999; text-align: center; font-size: 0.8em;">
+        © 2026 Kunga Tsering | Tsinghua University
+    </footer>
+</div>
+
+<script>
+    function toggleQR() {
+        const box = document.getElementById('qr-box');
+        box.style.display = (box.style.display === 'block') ? 'none' : 'block';
+    }
+</script>
+
+</body>
+</html>
